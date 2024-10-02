@@ -15,9 +15,9 @@
     while ($course=$courses->fetch_assoc()) {
       ?>
       <tr>
-        <td><?php echo $courses['course_id']; ?></td>
-        <td><?php echo $courses['course_number'];?></td>
-        <td><?php echo $courses['course_description'];?></td>
+        <td><?php echo $course['course_id']; ?></td>
+        <td><?php echo $course['course_number'];?></td>
+        <td><?php echo $course['course_description'];?></td>
       </tr>
       <?php
     }
