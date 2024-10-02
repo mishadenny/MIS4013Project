@@ -16,10 +16,10 @@
     while ($instrcutor=$instructors->fetch_assoc()) {
       ?>
       <tr>
-        <td><?php echo $instrcutor['instructor_id']; ?></td>
-        <td><?php echo $instrcutor['instructor_name'];?></td>
-        <td><?php echo $instrcutor['office_number'];?></td>
-        <td><a href="courses-by-instructors.php?id=<?php echo $instrcutor['instructor_id']; ?>">Courses</a></td>
+        <td><?php echo $instructor['instructor_id']; ?></td>
+        <td><?php echo $instructor['instructor_name'];?></td>
+        <td><?php echo $instructor['office_number'];?></td>
+        <td><a href="courses-by-instructors.php?id=<?php echo $instructor['instructor_id']; ?>">Courses</a></td>
       </tr>
       <?php
     }
