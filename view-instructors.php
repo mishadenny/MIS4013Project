@@ -13,7 +13,7 @@
     </thead>
     <tbody>
   <?php 
-    while ($instrcutor=$instructors->fetch_assoc()) {
+    while ($instructor=$instructors->fetch_assoc()) {
       ?>
       <tr>
         <td><?php echo $instructor['instructor_id']; ?></td>
