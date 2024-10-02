@@ -3,11 +3,11 @@
   <?php 
     while ($instructor=$instructors->fetch_assoc()) {
   ?>
-      <div class="card">
+    <div class="card">
       <div class="card-body">
-      <h5 class="card-title"><?php echo $instructor['instructor_name'];?></h5>
-      <p class="card-text">
-      <ul class="list-group">
+        <h5 class="card-title"><?php echo $instructor['instructor_name'];?></h5>
+        <p class="card-text">
+        <ul class="list-group">
   <?php
     $courses=selectCoursesByInstructors($instructor['instructor_id']);
       while ($course=$courses->fetch_assoc()){
