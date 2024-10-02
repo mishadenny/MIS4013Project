@@ -8,6 +8,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Office</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
         <td><?php echo $instrcutor['instructor_id']; ?></td>
         <td><?php echo $instrcutor['instructor_name'];?></td>
         <td><?php echo $instrcutor['office_number'];?></td>
+        <td><a href="courses-by-instructors.php?id=<?php echo $instrcutor['instructor_id']; ?>">Courses</a></td>
       </tr>
       <?php
     }
