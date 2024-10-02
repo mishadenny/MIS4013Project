@@ -14,7 +14,7 @@ from `mis4013-hw3`.instructor");
     }
 }
 
-function selectCoursesByInstructor($iid) {
+function selectCoursesByInstructors($iid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("select c.course_id, course_number, course_description, semester, room, day_time
