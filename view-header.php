@@ -20,13 +20,17 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="instructors.php">Instructors</a>
+          <a class="nav-link" href="instructors.php">Actors</a>
         </li>
               <li class="nav-item">
-          <a class="nav-link" href="courses.php">Courses</a>
+          <a class="nav-link" href="courses.php">Shows</a>
         </li>
               <li class="nav-item">
-          <a class="nav-link" href="instructors-with-courses.php">Instructors with Courses</a>
+          <a class="nav-link" href="instructors-with-courses.php">Actors with Shows</a>
+              </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Platforms</a>
+        </li>
       </ul>
     </div>
   </div>
