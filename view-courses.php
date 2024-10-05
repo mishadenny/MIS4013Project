@@ -18,7 +18,7 @@
       <tr>
         <td><?php echo $course['show_id']; ?></td>
         <td><?php echo $course['show_title'];?></td>
-        <td><?php echo $course['show_genre'];?></td>
+        <td><?php echo $course['genre'];?></td>
         <td>
           <form method="post" action="sections-by-course.php">
             <input type="hidden" name="cid" value="<?php echo $course['show_id']; ?>">
