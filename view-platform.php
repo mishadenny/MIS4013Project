@@ -20,7 +20,7 @@
         <td><?php echo $platform['platform_name'];?></td>
         <td><?php echo $platform['headquarters'];?></td>
         <td>
-                    <form method="post" action="shows-by-platform.php">
+          <form method="post" action="shows-by-platform.php">
             <input type="hidden" name="cid" value="<?php echo $platform['platform_id']; ?>">
             <button type="submit" class="btn btn-primary">Shows</button>
           </form>
