@@ -2,7 +2,7 @@
 require_once("util-db.php");
 require_once("model-courses.php");
 
-$pageTitle ="Courses";
+$pageTitle ="Shows";
 include "view-header.php"; 
 $courses = selectCourses();
 include "view-courses.php";
