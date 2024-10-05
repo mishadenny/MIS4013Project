@@ -21,7 +21,7 @@
         <td><?php echo $section['show_id']; ?></td>
         <td><?php echo $section['show_title'];?></td>
         <td><?php echo $section['genre'];?></td>
-        <td><?php echo $section['episode_title'];?></td>
+        <td><?php echo $section['title_episode'];?></td>
         <td><?php echo $section['season_number'];?></td>
         <td><?php echo $section['episode_number'];?></td>
       </tr>
