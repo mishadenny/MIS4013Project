@@ -12,7 +12,7 @@
             while ($course = $courses->fetch_assoc()) {
           ?>
             <li class="list-group-item">
-             Title: <?php echo $course['show_title']; ?> Genre: <?php echo $course['genre']; ?> Season: <?php echo $course['season_number']; ?> Episode <?php echo $course['episode_number']; ?>
+             Title: <?php echo $course['show_title']; ?> Title Episode: <?php echo $course['title_episode']; ?> Season: <?php echo $course['season_number']; ?> Episode <?php echo $course['episode_number']; ?>
             </li>
           <?php
             }
