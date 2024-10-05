@@ -1,5 +1,5 @@
 <h1>
-  Instructors
+  Actors
 </h1>
 <div class="table-responsive">
   <table class="table">
@@ -7,7 +7,7 @@
       <tr>
       <th>ID</th>
       <th>Name</th>
-      <th>Office</th>
+      <th>Age</th>
         <th></th>
       </tr>
     </thead>
@@ -16,10 +16,10 @@
     while ($instructor=$instructors->fetch_assoc()) {
       ?>
       <tr>
-        <td><?php echo $instructor['instructor_id']; ?></td>
-        <td><?php echo $instructor['instructor_name'];?></td>
-        <td><?php echo $instructor['office_number'];?></td>
-        <td><a href="courses-by-instructor.php?id=<?php echo $instructor['instructor_id']; ?>">Courses</a></td>
+        <td><?php echo $instructor['actor_id']; ?></td>
+        <td><?php echo $instructor['actor_name'];?></td>
+        <td><?php echo $instructor['age'];?></td>
+        <td><a href="courses-by-instructor.php?id=<?php echo $instructor['actor_id']; ?>">Shows</a></td>
       </tr>
       <?php
     }
