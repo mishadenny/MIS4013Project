@@ -8,7 +8,7 @@
       <th>ID</th>
       <th>Show Title</th>
       <th>Genre</th>
-      <th>Title Episode</th>
+      <th>Episode Title</th>
       <th>Season Number</th>
       <th>Episode Number</th>
       </tr>
@@ -21,7 +21,7 @@
         <td><?php echo $course['show_id']; ?></td>
         <td><?php echo $course['show_title'];?></td>
         <td><?php echo $course['genre'];?></td>
-        <td><?php echo $course['title_epsisode'];?></td>
+        <td><?php echo $course['title_episode'];?></td>
         <td><?php echo $course['season_number'];?></td>
         <td><?php echo $course['episode_number'];?></td>
       </tr>
