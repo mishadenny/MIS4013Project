@@ -19,7 +19,7 @@
           ?>
         </ul>
         <p class="card-text">
-          <small class="text-body-secondary">Office: <?php echo $instructor['age']; ?></small>
+          <small class="text-body-secondary">Age: <?php echo $instructor['age']; ?></small>
         </p>
       </div>
     </div>  
