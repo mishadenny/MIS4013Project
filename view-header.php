@@ -29,7 +29,7 @@
           <a class="nav-link" href="instructors-with-courses.php">Actors with Shows</a>
               </li>
          <li class="nav-item">
-          <a class="nav-link" href="instructors.php">Platforms</a>
+          <a class="nav-link" href="platform.php">Platforms</a>
         </li>
       </ul>
     </div>
