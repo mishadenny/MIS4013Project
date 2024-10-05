@@ -21,6 +21,10 @@
         <td><?php echo $platform['headquarters'];?></td>
         <td>
         </td>
+            <form method="post" action="sections-by-course.php">
+            <input type="hidden" name="cid" value="<?php echo $course['show_id']; ?>">
+            <button type="submit" class="btn btn-primary">Episodes</button>
+          </form>
       </tr>
       <?php
     }
