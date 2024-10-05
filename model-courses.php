@@ -2,8 +2,8 @@
 function selectCourses() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select course_id, course_number, course_description
-from `mis4013-hw3`.course");
+        $stmt = $conn->prepare("select show_id, show_title, genre, platform_id
+from `mis4013-hw3`.show");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
