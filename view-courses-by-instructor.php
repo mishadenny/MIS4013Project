@@ -1,16 +1,16 @@
 <h1>
-  Courses By Instructor
+  Shows by Actors
 </h1>
 <div class="table-responsive">
   <table class="table">
     <thead>
       <tr>
       <th>ID</th>
-      <th>Number</th>
-      <th>Description</th>
-      <th>Semester</th>
-      <th>Room</th>
-      <th>Day/Time</th>
+      <th>Show Title</th>
+      <th>Genre</th>
+      <th>Title Episode</th>
+      <th>Season Number</th>
+      <th>Episode Number</th>
       </tr>
     </thead>
     <tbody>
@@ -18,12 +18,12 @@
     while ($course=$courses->fetch_assoc()) {
       ?>
       <tr>
-        <td><?php echo $course['course_id']; ?></td>
-        <td><?php echo $course['course_number'];?></td>
-        <td><?php echo $course['course_description'];?></td>
-        <td><?php echo $course['semester'];?></td>
-        <td><?php echo $course['room'];?></td>
-        <td><?php echo $course['day_time'];?></td>
+        <td><?php echo $course['show_id']; ?></td>
+        <td><?php echo $course['show_title'];?></td>
+        <td><?php echo $course['genre'];?></td>
+        <td><?php echo $course['title_epsisode'];?></td>
+        <td><?php echo $course['season_number'];?></td>
+        <td><?php echo $course['episode_number'];?></td>
       </tr>
       <?php
     }
