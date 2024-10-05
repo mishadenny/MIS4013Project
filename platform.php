@@ -4,7 +4,7 @@ require_once("model-platform.php");
 
 $pageTitle ="Platforms";
 include "view-header.php"; 
-$platforms = selectPlatforms();
+$platforms = selectPlatform();
 include "view-platform.php";
 include "view-footer.php";
 ?>
