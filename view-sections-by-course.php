@@ -8,7 +8,7 @@
       <th>ID</th>
       <th>Show Title</th>
       <th>Genre</th>
-      <th>Title Episode</th>
+      <th>Episode Title</th>
       <th>Season Number</th>
       <th>Episode Number</th>
       </tr>
