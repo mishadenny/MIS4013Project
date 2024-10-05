@@ -22,7 +22,7 @@
         <td>
         </td>
             <form method="post" action="shows-by-platform.php">
-            <input type="hidden" name="cid" value="<?php echo $course['platform_id']; ?>">
+            <input type="hidden" name="cid" value="<?php echo $platform['platform_id']; ?>">
             <button type="submit" class="btn btn-primary">Shows</button>
           </form>
       </tr>
