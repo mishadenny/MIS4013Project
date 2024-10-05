@@ -1,25 +1,25 @@
-<h1>Instructors With Courses</h1>
+<h1>Actors with Shows</h1>
 <div class="card-group">
   <?php 
     while ($instructor = $instructors->fetch_assoc()) {
   ?>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><?php echo $instructor['instructor_name']; ?></h5>
+        <h5 class="card-title"><?php echo $instructor['actor_name']; ?></h5>
         <ul class="list-group">
           <?php
-            $courses = selectCoursesByInstructors($instructor['instructor_id']);
+            $courses = selectCoursesByInstructors($instructor['actor_id']);
             while ($course = $courses->fetch_assoc()) {
           ?>
             <li class="list-group-item">
-              <?php echo $course['course_number']; ?> - <?php echo $course['semester']; ?> - <?php echo $course['room']; ?> - <?php echo $course['day_time']; ?>
+              <?php echo $course['show_title']; ?> - <?php echo $course['genre']; ?> - <?php echo $course['season_number']; ?> - <?php echo $course['episode_number']; ?>
             </li>
           <?php
             }
           ?>
         </ul>
         <p class="card-text">
-          <small class="text-body-secondary">Office: <?php echo $instructor['office_number']; ?></small>
+          <small class="text-body-secondary">Office: <?php echo $instructor['age']; ?></small>
         </p>
       </div>
     </div>  
