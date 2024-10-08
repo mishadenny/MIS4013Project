@@ -13,4 +13,49 @@ from `mis4013-hw3`.show");
         throw $e;
     }
 }
+
+function InsertShow($sTitle, $sGenre) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`show` (`show_title`, `genre`) VALUES (?, ?)");
+        $stmt->bind_param("ss", $sTitle, $sGenre);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function UpdateShow($sTitle, $sGenre, $sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update `mis4013-hw3`.`show` set `show_title`=?, `genre`=? where show_id=?");
+        $stmt->bind_param("ssi", $sTitle, $sGenre, $sid);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteShow($sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from show where show_id=?");
+        $stmt->bind_param("i", $sid);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>
