@@ -8,7 +8,7 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
   switch($_POST['actionType']) {
     case "Add":
-      InsertCourse($_POST['sTitle'], $_POST['cGenre']);
+      InsertShow($_POST['sTitle'], $_POST['cGenre']);
       break;
   {
 }
