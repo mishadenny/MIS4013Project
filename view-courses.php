@@ -8,9 +8,6 @@
     ?>
   </div>
 </div>
-<h1>
-  Shows
-</h1>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -32,12 +29,6 @@
         <td><?php echo $course['show_title'];?></td>
         <td><?php echo $course['genre'];?></td>
         <td>
-        </td>
-        <td>
-           <form method="post" action="sections-by-course.php">
-            <input type="hidden" name="cid" value="<?php echo $course['show_id']; ?>">
-            <button type="submit" class="btn btn-primary">Episodes</button>
-          </form>
         </td>
         <td>
           <form method="post" action="">
