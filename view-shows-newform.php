@@ -24,6 +24,7 @@
             <label for="sGenre" class="form-label">Show Genre</label>
             <input type="text" class="form-control" id="sGenre" name="sGenre">
           </div>
+              <input type="hidden" name="actionType" value="Add">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
