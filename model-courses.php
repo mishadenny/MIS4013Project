@@ -29,11 +29,11 @@ function InsertShow($sTitle, $sGenre) {
     }
 }
 
-function UpdateShow($sTitle, $sGenre, $sid) {
+function UpdateShow($sTitle, $sGenre, $cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `mis4013-hw3`.`show` set `show_title`=?, `genre`=? where show_id=?");
-        $stmt->bind_param("ssi", $sTitle, $sGenre, $sid);
+        $stmt->bind_param("ssi", $sTitle, $sGenre, $cid);
         $success = $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -44,11 +44,11 @@ function UpdateShow($sTitle, $sGenre, $sid) {
     }
 }
 
-function deleteShow($sid) {
+function deleteShow($cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("delete from `mis4013-hw3`.`show` where show_id=?");
-        $stmt->bind_param("i", $sid);
+        $stmt->bind_param("i", $cid);
         $success = $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
