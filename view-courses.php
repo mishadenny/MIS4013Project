@@ -29,6 +29,9 @@
         <td><?php echo $course['show_title'];?></td>
         <td><?php echo $course['genre'];?></td>
         <td>
+      <?php
+      include "view-shows-editform.php"
+      ?>
         </td>
         <td>
           <form method="post" action="">
