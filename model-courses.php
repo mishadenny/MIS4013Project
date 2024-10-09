@@ -47,7 +47,7 @@ function UpdateShow($sTitle, $sGenre, $sid) {
 function deleteShow($sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from `mis4013-hw3`.`show` where show_id=?");
+        $stmt = $conn->prepare("delete from show where show_id=?");
         $stmt->bind_param("i", $sid);
         $success = $stmt->execute();
         $result = $stmt->get_result();
