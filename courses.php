@@ -15,7 +15,7 @@ if (isset($_POST['actionType'])) {
       }
       break;
     case "Delete":
-      if (deleteShow($_POST['sid'])) {
+      if (deleteShow($_POST['cid'])) {
         echo '<div class="alert alert-success" role="alert">Course Deleted </div>';
   } else {
     echo '<div class="alert alert-danger" role="alert">Error </div>';
