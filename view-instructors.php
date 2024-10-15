@@ -15,9 +15,9 @@
       <th>ID</th>
       <th>Name</th>
       <th>Age</th>
-        <th></th>
-        <th></th>
-        <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
       </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
       <?php
        include "view-actors-editform.php"
       ?>
-      </td>
+        </td>
         <td>
           <form method="post" action="">
             <input type="hidden" name="cid" value="<?php echo $instructor['actor_id']; ?>">
@@ -48,7 +48,7 @@
         </td>
         <td>
             <form method="post" action="courses-by-instructors.php">
-            <input type="hidden" name="cid" value="<?php echo $instructor['actor_id']; ?>">
+            <input type="hidden" name="iid" value="<?php echo $instructor['actor_id']; ?>">
             <button type="submit" class="btn btn-primary">Shows</button>
             </form>
         </td>
