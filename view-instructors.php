@@ -47,7 +47,7 @@
           </form>
         </td>
         <td>
-            <form method="post" action="courses-by-instructors.php">
+            <form method="post" action="courses-by-instructor.php">
             <input type="hidden" name="iid" value="<?php echo $instructor['actor_id']; ?>">
             <button type="submit" class="btn btn-primary">Shows</button>
             </form>
