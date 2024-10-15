@@ -29,7 +29,7 @@
         <td><?php echo $instructor['actor_name'];?></td>
         <td><?php echo $instructor['age'];?></td>
         <td><a href="courses-by-instructor.php?id=<?php echo $instructor['actor_id']; ?>">Shows</a></td>
-      </tr>
+        <td>
       <?php
        include "view-actors-editform.php"
       ?>
