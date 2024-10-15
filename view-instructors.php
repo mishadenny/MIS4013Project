@@ -28,7 +28,7 @@
         <td><?php echo $instructor['actor_id']; ?></td>
         <td><?php echo $instructor['actor_name'];?></td>
         <td><?php echo $instructor['age'];?></td>
-        <td><a href="courses-by-instructor.php?id=<?php echo $instructor['actor_id']; ?>">Shows</a></td>
+        
         <td>
       <?php
        include "view-actors-editform.php"
@@ -46,12 +46,9 @@
             </button>
           </form>
         </td>
-        <td>
-            <form method="post" action="courses-by-instructor.php">
-            <input type="hidden" name="iid" value="<?php echo $instructor['actor_id']; ?>">
-            <button type="submit" class="btn btn-primary">Shows</button>
-            </form>
-        </td>
+
+        <td><a href="courses-by-instructor.php?id=<?php echo $instructor['actor_id']; ?>">Shows</a></td>
+        
       </tr>
       <?php
     }
