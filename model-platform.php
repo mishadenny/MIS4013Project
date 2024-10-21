@@ -29,11 +29,11 @@ function insertPlatform($pName, $pHeadquarters) {
     }
 }
 
-function updatePlatform($pName, $pHeadquarters, $pid) {
+function updatePlatform($pName, $pHeadquarters, $cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("update `mis4013-hw3`.`platform` set `platform_name`=?, `headquarters`=? where platform_id=?");
-        $stmt->bind_param("ssi", $pName, $pHeadquarters, $pid);
+        $stmt->bind_param("ssi", $pName, $pHeadquarters, $cid);
         $success = $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -44,11 +44,11 @@ function updatePlatform($pName, $pHeadquarters, $pid) {
     }
 }
 
-function deletePlatform($pid) {
+function deletePlatform($cid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("delete from `mis4013-hw3`.`platform` where platform_id=?");
-        $stmt->bind_param("i", $pid);
+        $stmt->bind_param("i", $cid);
         $success = $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
