@@ -31,4 +31,49 @@ where e.actor_id=?");
         throw $e;
     }
 }
+
+function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`episode` (`actor_id`, `show_id`,'title_episode','season_number','episode_number') VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("iisss", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update `mis4013-hw3`.`episode` set `actor_id`=?, `show_id`=?, 'title_episode'=?, 'season_number'=?, 'episode_number'=? where episode_id=?");
+        $stmt->bind_param("iisssi", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteEpisode($sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from `mis4013-hw3`.`episode` where episode_id=?");
+        $stmt->bind_param("i", $sid);
+        $success = $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>
