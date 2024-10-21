@@ -22,7 +22,7 @@
           </div>
           <div class="mb-3">
             <label for="pHeadquarters<?php echo $platform['platform_id'];?>" class="form-label">Platform Headquarters</label>
-            <input type="text" class="form-control" id="pHeadquarters<?php echo $platform['platform_id'];?>" name="pHeadquarters" value="<?php echo $platform['Headquarters'];?>">
+            <input type="text" class="form-control" id="pHeadquarters<?php echo $platform['platform_id'];?>" name="pHeadquarters" value="<?php echo $platform['headquarters'];?>">
           </div>
               <input type="hidden" name="cid" value="<?php echo $platform['platform_id'];?>">
               <input type="hidden" name="actionType" value="Edit">
