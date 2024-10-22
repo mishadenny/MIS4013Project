@@ -20,7 +20,7 @@
             <label for="iid" class="form-label">Actor ID</label>
 <?php
 $actorList = selectInstructorsForInput();
-$selectedActor=0
+$selectedActor=0;
 include "view-actor-input-list.php";
 ?>
           </div>
