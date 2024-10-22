@@ -18,7 +18,10 @@
         <form method="post" action="">
           <div class="mb-3">
             <label for="iid" class="form-label">Actor ID</label>
-            <input type="text" class="form-control" id="iid" name="iid">
+<?php
+$actorList = selectInstructorForInput();
+include "view-actor-input-list.php";
+?>
           </div>
           <div class="mb-3">
             <label for="cid" class="form-label">Show ID</label>
