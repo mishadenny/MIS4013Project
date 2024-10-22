@@ -32,6 +32,36 @@ where e.actor_id=?");
     }
 }
 
+function selectInstructorsForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("select actor_id, actor_name
+from `mis4013-hw3`.actor order by actor_name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function selectCoursesForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("select show_id, show_name
+from `mis4013-hw3`.show order by show_name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
 function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber) {
     try {
         $conn = get_db_connection();
