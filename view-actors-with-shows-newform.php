@@ -19,7 +19,7 @@
           <div class="mb-3">
             <label for="iid" class="form-label">Actor ID</label>
 <?php
-$actorList = selectInstructorForInput();
+$actorList = selectInstructorsForInput();
 include "view-actor-input-list.php";
 ?>
           </div>
