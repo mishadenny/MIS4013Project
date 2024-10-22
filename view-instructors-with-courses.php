@@ -2,9 +2,6 @@
   <div class="col">
 <h1>Actors with Shows</h1>
 <div class="card-group">
-    <?php
-  include "view-actors-with-shows-newform.php"
-    ?>
   <?php 
     while ($instructor = $instructors->fetch_assoc()) {
   ?>
@@ -28,6 +25,9 @@
         </p>
       </div>
     </div>  
+    <?php
+  include "view-actors-with-shows-newform.php"
+    ?>
   <?php
     }
   ?>
