@@ -3,10 +3,10 @@
     <h1>Shows</h1>
   </div>
   <div class="col-auto">
-  </div>
   <?php
   include "view-shows-newform.php"
   ?>
+  </div>
 </div>
 <div class="table-responsive">
   <table class="table">
