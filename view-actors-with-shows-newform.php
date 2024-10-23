@@ -17,7 +17,7 @@
       <div class="modal-body">
         <form method="post" action="">
           <div class="mb-3">
-            <label for="iid" class="form-label">Actor ID</label>
+            <label for="iid" class="form-label">Actor</label>
 <?php
 $actorList = selectInstructorsForInput();
 $selectedActor=0;
