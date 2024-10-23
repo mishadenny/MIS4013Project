@@ -65,7 +65,7 @@ from `mis4013-hw3`.show order by show_name");
 function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`episode` (`actor_id`, `show_id`,'title_episode','season_number','episode_number') VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`episode` (`actor_id`, `show_id`, `title_episode`, `season_number`, `episode_number`) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("iisss", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber);
         $success = $stmt->execute();
         $result = $stmt->get_result();
