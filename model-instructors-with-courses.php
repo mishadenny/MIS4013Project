@@ -2,8 +2,7 @@
 function selectInstructors() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select actor_id, actor_name, age 
-from `mis4013-hw3`.actor");
+        $stmt = $conn->prepare("SELECT actor_id, actor_name, age FROM `mis4013-hw3`.actor");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -17,10 +16,10 @@ from `mis4013-hw3`.actor");
 function selectCoursesByInstructors($iid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select s.show_id, show_title, genre, title_episode, season_number, episode_number
-from `mis4013-hw3`.show s
-join `mis4013-hw3`.episode e on e.show_id=s.show_id 
-where e.actor_id=?");
+        $stmt = $conn->prepare("SELECT s.show_id, show_title, genre, title_episode, season_number, episode_number
+                                FROM `mis4013-hw3`.show s
+                                JOIN `mis4013-hw3`.episode e ON e.show_id = s.show_id 
+                                WHERE e.actor_id = ?");
         $stmt->bind_param("i", $iid);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -35,8 +34,7 @@ where e.actor_id=?");
 function selectInstructorsForInput() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select actor_id, actor_name
-from `mis4013-hw3`.actor");
+        $stmt = $conn->prepare("SELECT actor_id, actor_name FROM `mis4013-hw3`.actor ORDER BY actor_name");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -50,8 +48,7 @@ from `mis4013-hw3`.actor");
 function selectCoursesForInput() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("select show_id, show_name
-from `mis4013-hw3`.show");
+        $stmt = $conn->prepare("SELECT show_id, show_name FROM `mis4013-hw3`.show ORDER BY show_name");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
@@ -65,10 +62,10 @@ from `mis4013-hw3`.show");
 function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`episode` (`actor_id`, `show_id`, `title_episode`, `season_number`, `episode_number`) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO `mis4013-hw3`.`episode` (`actor_id`, `show_id`, `title_episode`, `season_number`, `episode_number`) 
+                                VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("iisss", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber);
         $success = $stmt->execute();
-        $result = $stmt->get_result();
         $conn->close();
         return $success;
     } catch (Exception $e) {
@@ -80,10 +77,10 @@ function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber)
 function updateEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("update `mis4013-hw3`.`episode` set `actor_id`=?, `show_id`=?, 'title_episode'=?, 'season_number'=?, 'episode_number'=? where episode_id=?");
+        $stmt = $conn->prepare("UPDATE `mis4013-hw3`.`episode` SET `actor_id` = ?, `show_id` = ?, `title_episode` = ?, 
+                                `season_number` = ?, `episode_number` = ? WHERE episode_id = ?");
         $stmt->bind_param("iisssi", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid);
         $success = $stmt->execute();
-        $result = $stmt->get_result();
         $conn->close();
         return $success;
     } catch (Exception $e) {
@@ -95,10 +92,9 @@ function updateEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber,
 function deleteEpisode($sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("delete from `mis4013-hw3`.`episode` where episode_id=?");
+        $stmt = $conn->prepare("DELETE FROM `mis4013-hw3`.`episode` WHERE episode_id = ?");
         $stmt->bind_param("i", $sid);
         $success = $stmt->execute();
-        $result = $stmt->get_result();
         $conn->close();
         return $success;
     } catch (Exception $e) {
