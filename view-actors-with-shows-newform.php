@@ -26,7 +26,7 @@ include "view-actor-input-list.php";
           </div>
           <div class="mb-3">
             <label for="cid" class="form-label">Show ID</label>
-            <input type="text" class="form-control" id="cid" name="cid">
+            <input type="number" class="form-control" id="cid" name="cid">
           </div>
           <div class="mb-3">
             <label for="titleepisode" class="form-label">Title Episode</label>
