@@ -2,7 +2,7 @@
   <div class="col">
 <h1>Actors with Shows</h1>
   </div>
-<div class="col text-end">
+<div class="col-auto">
 <?php
   include "view-actors-with-shows-newform.php"
   ?>
