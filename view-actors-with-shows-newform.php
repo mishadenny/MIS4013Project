@@ -6,7 +6,7 @@
     </svg>
 </button>
 
-<!-- Modal -->
+<!-- Modal for Adding New Episodes -->
 <div class="modal fade" id="newEpisodesModal" tabindex="-1" aria-labelledby="newEpisodesModallabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -18,11 +18,11 @@
         <form method="post" action="">
           <div class="mb-3">
             <label for="iid" class="form-label">Actor</label>
-<?php
-$actorList = selectInstructorsForInput();
-$selectedActor=0;
-include "view-actor-input-list.php";
-?>
+            <?php
+              $actorList = selectInstructorsForInput();
+              $selectedActor = 0;
+              include "view-actor-input-list.php";
+            ?>
           </div>
           <div class="mb-3">
             <label for="cid" class="form-label">Show ID</label>
@@ -40,12 +40,9 @@ include "view-actor-input-list.php";
             <label for="episodenumber" class="form-label">Episode Number</label>
             <input type="text" class="form-control" id="episodenumber" name="episodenumber">
           </div>
-              <input type="hidden" name="actionType" value="Add">
+          <input type="hidden" name="actionType" value="Add">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
       </div>
     </div>
   </div>
-</div>
-
-
