@@ -48,9 +48,4 @@ include "view-actor-input-list.php";
   </div>
 </div>
 
-<?php
-require_once("util-db.php");
-require_once("model-instructors-with-courses.php");
 
-$pageTitle ="Actors with Shows";
-include "view-header.php"; 
