@@ -15,14 +15,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- Edit Form -->
         <form method="post" action="">
           <div class="mb-3">
             <label for="iid<?php echo $course['episode_id'];?>" class="form-label">Actor</label>
-<?php
-$actorList = selectInstructorsForInput();
-$selectedActor= $course['actor_id'];
-include "view-actor-input-list.php";
-?>          </div>
+            <?php
+              $actorList = selectInstructorsForInput();
+              $selectedActor = $course['actor_id'];
+              include "view-actor-input-list.php";
+            ?>
+          </div>
           <div class="mb-3">
             <label for="cid<?php echo $course['episode_id'];?>" class="form-label">Show</label>
             <input type="text" class="form-control" id="cid<?php echo $course['episode_id'];?>" name="cid" value="<?php echo $course['show_id'];?>">
@@ -39,10 +41,12 @@ include "view-actor-input-list.php";
             <label for="episodenumber<?php echo $course['episode_id'];?>" class="form-label">Episode Number</label>
             <input type="text" class="form-control" id="episodenumber<?php echo $course['episode_id'];?>" name="episodenumber" value="<?php echo $course['episode_number'];?>">
           </div>
-              <input type="hidden" name="sid" value="<?php echo $course['episode_id'];?>">
-              <input type="hidden" name="actionType" value="Edit">
+          <!-- Hidden fields for episode ID (sid) and actionType -->
+          <input type="hidden" name="sid" value="<?php echo $course['episode_id']; ?>">
+          <input type="hidden" name="actionType" value="Edit">
           <button type="submit" class="btn btn-primary">Save</button>
         </form>
+        <!-- End of Edit Form -->
       </div>
     </div>
   </div>
