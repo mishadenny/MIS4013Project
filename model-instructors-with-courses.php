@@ -16,10 +16,12 @@ function selectInstructors() {
 function selectCoursesByInstructors($iid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT s.show_id, show_title, genre, title_episode, season_number, episode_number
-                                FROM `mis4013-hw3`.show s
-                                JOIN `mis4013-hw3`.episode e ON e.show_id = s.show_id 
-                                WHERE e.actor_id = ?");
+        $stmt = $conn->prepare("
+            SELECT e.episode_id, s.show_id, s.show_title, s.genre, e.title_episode, e.season_number, e.episode_number
+            FROM `mis4013-hw3`.show s
+            JOIN `mis4013-hw3`.episode e ON e.show_id = s.show_id 
+            WHERE e.actor_id = ?
+        ");
         $stmt->bind_param("i", $iid);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -77,8 +79,11 @@ function insertEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber)
 function updateEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("UPDATE `mis4013-hw3`.`episode` SET `actor_id` = ?, `show_id` = ?, `title_episode` = ?, 
-                                `season_number` = ?, `episode_number` = ? WHERE episode_id = ?");
+        $stmt = $conn->prepare("
+            UPDATE `mis4013-hw3`.`episode`
+            SET `actor_id` = ?, `show_id` = ?, `title_episode` = ?, `season_number` = ?, `episode_number` = ?
+            WHERE `episode_id` = ?
+        ");
         $stmt->bind_param("iisssi", $iid, $cid, $titleepisode, $seasonnumber, $episodenumber, $sid);
         $success = $stmt->execute();
         $conn->close();
@@ -92,7 +97,7 @@ function updateEpisode($iid, $cid, $titleepisode, $seasonnumber, $episodenumber,
 function deleteEpisode($sid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("DELETE FROM `mis4013-hw3`.`episode` WHERE episode_id = ?");
+        $stmt = $conn->prepare("DELETE FROM `mis4013-hw3`.`episode` WHERE `episode_id` = ?");
         $stmt->bind_param("i", $sid);
         $success = $stmt->execute();
         $conn->close();
